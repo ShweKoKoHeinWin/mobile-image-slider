@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+*::after, *::before {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.wrapper {
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+    position: relative;
+}
+.carousel {
+    width: 400px;
+    min-height: 200px;
+    height: 300px;
+    background-color: cyan;       
+    outline: 10px groove orange;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    overflow: hidden;
+    resize: both;
+    z-index: 2;
+}
+.carousel.drag {
+    cursor: grab;
+    scroll-behavior: auto;
+}
+img {
+    width: calc(100% / 2);
+    height: 100%;
+    object-fit: cover;
+}
+.carouseldot-box {
+    position: relative;
+    border-inline: 5px solid red;
+    border-bottom: 5px solid red;
+}
+#carousel-dot {
+    max-width: 50%;
+    background-color: red;
+    border-radius: 20%;
+    height: 50px;
+    margin: auto;
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    overflow-x: hidden;    
+    list-style: none;
+}
+.carouseldot-box .fa-angle-left {
+    background-color: chartreuse;
+    color: chocolate;
+    padding: .5rem;
+    translate: 100% -50%;
+}
+.carouseldot-box .fa-angle-right {
+    background-color: chartreuse;
+    color: chocolate;
+    padding: .5rem;
+    translate: -100% -50%;
+}
+.dot {
+    cursor: pointer;
+    background-color: cyan;
+    border-radius: 50%;
+    padding: .25rem;
+    margin: 0 5px;
+}
+.fa-angle-left, .fa-angle-right {
+    background-color: orangered;
+    border-radius: 50%;
+    color: cyan;
+    padding: 1rem;
+    position: absolute;
+    opacity: .3;
+    transition: .3s ease;    
+    z-index: 500;
+    cursor: pointer;
+}
+    .fa-angle-left:hover, .fa-angle-right:hover {
+        opacity: .8;
+    }
+.fa-angle-left {
+    left: 0;
+    top: 50%;
+    translate: -100% -50%;
+}
+.fa-angle-right {
+    right: 0;
+    top: 50%;
+    translate: 100% -50%;
+}
+
+
+#input {
+    width: auto;
+    background-color: rebeccapurple;
+    color: cyan;
+}
+    #input:hover {
+        cursor: pointer;
+    }
+
+@media (max-width: 500px) {
+    .carousel {
+        width: 300px;
+        height: 450px;
+
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
